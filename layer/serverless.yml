@@ -1,0 +1,13 @@
+org: '1252331805'
+app: upme-backend-coser
+stage: prod
+component: layer
+name: upme-backend-coser-layer
+inputs:
+  name: upme-backend-coser-layer
+  region: ap-shanghai
+  src:
+    src: ../node_modules
+    targetDir: /node_modules
+  runtimes:
+    - Nodejs12.16

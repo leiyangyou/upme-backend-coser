@@ -1,0 +1,28 @@
+org: '1252331805'
+app: upme-backend-coser
+stage: prod
+component: koa
+name: koa-8R3TAFapq
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+      - node_modules/**
+  region: ap-shanghai
+  runtime: Nodejs12.16
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release
+    serviceTimeout: 60
+    autoCreateDns: false
+  isAutoCiDeploy: false
+  functionConf:
+    eip: false
+    timeout: 3
+    memorySize: 128
+  layers:
+    - name: '${output:${stage}:${app}:upme-backend-coser-layer.name}'
+      version: '${output:${stage}:${app}:upme-backend-coser-layer.version}'
