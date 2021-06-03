@@ -2,12 +2,13 @@ org: '1252331805'
 app: upme-backend-coser
 stage: prod
 component: koa
-name: koa-8R3TAFapq
+name: upme-backend-coser
 inputs:
   src:
     src: ./
     exclude:
       - .env
+      - .idea
       - node_modules/**
   region: ap-shanghai
   runtime: Nodejs12.16
@@ -21,8 +22,8 @@ inputs:
   isAutoCiDeploy: false
   functionConf:
     eip: false
-    timeout: 3
-    memorySize: 128
+    timeout: 2
+    memorySize: 64
   layers:
     - name: '${output:${stage}:${app}:upme-backend-coser-layer.name}'
       version: '${output:${stage}:${app}:upme-backend-coser-layer.version}'
