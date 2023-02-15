@@ -180,7 +180,7 @@ router.get('/callback', async function (ctx) {
 })
 
 router.post('/callback/workflow', async function (ctx) {
-  console.log(JSON.stringify({body: ctx.request.body, query: ctx.query}, null, 2 ))
+  console.log(JSON.stringify({body: ctx.request.body, query: ctx.query, headers: ctx.request.headers}, null, 2 ))
   ctx.body = ''
 })
 app.use(router.allowedMethods()).use(router.routes())
